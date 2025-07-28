@@ -7,7 +7,7 @@ env:
   CMAKE_CXX_STANDARD: "17"
 overrides:
   autotools:
-    tag: v1.6.3
+    tag: v1.6.4
   boost:
     version:  "%(tag_basename)s"
     tag: "v1.70.0"
@@ -18,7 +18,7 @@ overrides:
      printf "#include \"boost/version.hpp\"\n# if (BOOST_VERSION < 106400)\n#error \"Cannot use system's boost. Boost > 1.64.00 required.\"\n#endif\nint main(){}" \
      | gcc -I$BOOST_ROOT/include -xc++ - -o /dev/null
   GCC-Toolchain:
-    tag: v7.3.0-alice2
+    tag: v14.2.0-alice2
     prefer_system_check: |
       set -e
       which gfortran || { echo "gfortran missing"; exit 1; }
